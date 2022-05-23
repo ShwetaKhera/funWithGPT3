@@ -45,7 +45,10 @@ class App extends React.Component {
     postData(url,data).then(res => res.json())
       .then(res => {
         this.handleGPTResponse(res);
-      });
+      })
+      .catch(err => {
+        console.log(err)
+    });
   }
 
   handleGPTResponse = (res) => {
